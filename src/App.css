@@ -1,0 +1,24 @@
+.calculator {
+  max-width: 400px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+.calculator label {
+  display: block;
+  margin-top: 10px;
+}
+.calculator input,
+.calculator select {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+}
+.calculator button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  width: 100%;
+}
+.result {
+  margin-top: 20px;
+  font-weight: bold;
+}
