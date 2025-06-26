@@ -70,7 +70,7 @@ export default function App() {
         />
       )}
 
-      <button onClick={calculate}>Calcular</button>
+     
       <ResultBox result={result} />
     </div>
   );
