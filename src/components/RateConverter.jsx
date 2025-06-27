@@ -62,6 +62,15 @@ const RateConverter = () => {
       <h2>Conversión de Tasa</h2>
 
       <div>
+        <label>Tasa a convertir (%):</label>
+        <input
+          type="number"
+          value={rate}
+          onChange={(e) => setRate(e.target.value)}
+        />
+      </div>
+
+      <div>
         <label>Desde (tipo):</label>
         <select value={fromType} onChange={(e) => setFromType(e.target.value)}>
           <option value="Efectiva">Efectiva</option>
@@ -97,15 +106,6 @@ const RateConverter = () => {
             </option>
           ))}
         </select>
-      </div>
-
-      <div>
-        <label>Tasa a convertir (%):</label>
-        <input
-          type="number"
-          value={rate}
-          onChange={(e) => setRate(e.target.value)}
-        />
       </div>
 
       <button onClick={convertRate}>Convertir</button>
