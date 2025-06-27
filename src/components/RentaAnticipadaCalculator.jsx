@@ -28,17 +28,17 @@ Fórmula: VF = R * ((1 + i)^n - 1) / i) * (1 + i)
 2. Número de períodos: n = ${n} meses
 3. Calcular (1 + i)^n = (1 + ${i})^${n} = ${Math.pow(1 + i, n).toFixed(6)}
 4. Restar 1: ${Math.pow(1 + i, n).toFixed(6)} - 1 = ${(Math.pow(1 + i, n) - 1).toFixed(6)}
-5. Dividir por i: ${(Math.pow(1 + i, n) - 1).toFixed(6)} / ${i} = ${( (Math.pow(1 + i, n) - 1) / i ).toFixed(6)}
-6. Multiplicar por (1 + i): ${( (Math.pow(1 + i, n) - 1) / i ).toFixed(6)} * (1 + ${i}) = ${factor.toFixed(6)}
-7. Multiplicar por R: ${R} * ${factor.toFixed(6)} = ${VF.toFixed(2)}
+5. Dividir por i: ${(Math.pow(1 + i, n) - 1).toFixed(6)} / ${i} = ${((Math.pow(1 + i, n) - 1) / i).toFixed(6)}
+6. Multiplicar por (1 + i): ${((Math.pow(1 + i, n) - 1) / i).toFixed(6)} * (1 + ${i}) = ${factor.toFixed(6)}
+7. Multiplicar por R: ${R.toLocaleString('es-CO')} * ${factor.toFixed(6)} = ${VF.toLocaleString('es-CO', { minimumFractionDigits: 2 })}
     `;
 
-    setResult(`Valor Futuro: $${VF.toFixed(2)}`);
+    setResult(`Valor Futuro: $${VF.toLocaleString('es-CO', { minimumFractionDigits: 2 })}`);
     setProcedure(stepByStep);
   };
 
   return (
-    <div className="calculator-box">
+    <div className="calculator-boxs">
       <h3>Renta Anticipada - Valor Futuro</h3>
       <label>Renta (R):</label>
       <input

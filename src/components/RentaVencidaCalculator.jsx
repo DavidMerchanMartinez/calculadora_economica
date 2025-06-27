@@ -21,19 +21,19 @@ const RentaVencidaCalculator = ({ setResult }) => {
     const procedimientoTexto = `Fórmula: VF = R * [(1 + i)^n - 1] / i
 
 Donde:
-R = ${R}
-i = ${i} (tasa por período)
+R = ${R.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+i = ${i.toFixed(6)} (tasa por período)
 n = ${n} períodos
 
 Desarrollo:
-VF = ${R} * [(1 + ${i})^${n} - 1] / ${i}
-VF = ${R} * [${Math.pow(1 + i, n).toFixed(5)} - 1] / ${i}
-VF = ${R} * [${(Math.pow(1 + i, n) - 1).toFixed(5)}] / ${i}
-VF = ${VF.toFixed(2)}
+VF = ${R.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} * [(1 + ${i.toFixed(6)})^${n} - 1] / ${i.toFixed(6)}
+VF = ${R.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} * [${Math.pow(1 + i, n).toFixed(6)} - 1] / ${i.toFixed(6)}
+VF = ${R.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} * [${(Math.pow(1 + i, n) - 1).toFixed(6)}] / ${i.toFixed(6)}
+VF = ${VF.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 `;
 
     setProcedimiento(procedimientoTexto);
-     setResult(`Valor Futuro: $${VF.toFixed(2)} (número de períodos en meses)`);
+    setResult(`Valor Futuro: $${VF.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} (número de períodos en meses)`);
   };
 
   return (

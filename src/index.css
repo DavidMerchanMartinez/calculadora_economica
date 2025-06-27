@@ -1,70 +1,114 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* Fondo global claro y centrado horizontal */
 body {
   margin: 0;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+   color: #ffffffde;
+  background-color: #003950;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.calculator-box {
+  background: rgb(27, 31, 31); /* gris oscuro translúcido */
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* borde interno suave */
+  box-shadow:
+    0 0 10px rgb(41, 44, 44),  /* neón suave */
+    0 4px 30px rgba(0, 0, 0, 0.4);    /* profundidad */
+  padding: 2rem;
+  max-width: 600px;
+  width: 100%;
+  box-sizing: border-box;
+  animation: neon-glow 3s infinite alternate;
+}
+
+/* Títulos */
+.calculator-box h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Inputs, selects, botones comunes */
+input, select {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
 button {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  padding: 0.75rem;
+  border: none;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: background-color 0.2s ease;
 }
+
 button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  background-color: #0056b3;
 }
 
-
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@keyframes neon-glow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3),
+                0 0 20px rgba(0, 255, 255, 0.2),
+                0 0 30px rgba(0, 255, 255, 0.1);
+    border-color: rgba(0, 255, 255, 0.3);
   }
-  a:hover {
-    color: #747bff;
+  100% {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6),
+                0 0 30px rgba(0, 255, 255, 0.5),
+                0 0 40px rgba(0, 255, 255, 0.4);
+    border-color: rgba(0, 255, 255, 0.5);
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+/* Responsive mejorado para móviles */
+@media (max-width: 768px) {
+  /* 1. Hacer que html, body y root llenen el viewport */
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* 2. Flex en body para centrar vertical y horizontal */
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* cambia a flex-start si prefieres que empiece arriba */
+    align-items: center;
+    box-sizing: border-box;
+    padding: 1rem;
+  }
+
+  /* 3. Ajustes de la caja */
+  .calculator-box {
+    width: 100%;
+    max-width: 360px;   /* o 100% si prefieres */
+    margin: auto;
+    padding: 1rem;
+    border-radius: 12px;
+    box-sizing: border-box;
+  }
+
+  /* 4. Inputs y textos un pelín más grandes para móviles */
+  h2 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  input, select, button {
+    font-size: 1rem;
+    padding: 0.65rem;
+    margin-bottom: 0.75rem;
   }
 }

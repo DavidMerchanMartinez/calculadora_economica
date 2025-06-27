@@ -18,8 +18,9 @@ export default function App() {
     setResult(null); // limpiar el resultado cuando cambie el tipo
   }, [calcType]);
 
-  return (
-    <div className="calculator">
+ return (
+  <div className="app-background">
+    <div className="calculator-box">
       <h2>Calculadora Financiera</h2>
 
       <CalculatorSelector
@@ -38,7 +39,7 @@ export default function App() {
       {calcType === 'renta_anticipada' && (
         <RentaAnticipadaCalculator setResult={setResult} />
       )}
-      
+
       {calcType === 'renta_vencida' && (
         <RentaVencidaCalculator setResult={setResult} />
       )}
@@ -46,13 +47,13 @@ export default function App() {
       {calcType === 'vf' && (
         <CalculadoraValorFuturo setResult={setResult} />
       )}
-      
-       {calcType === 'vp' && (
+
+      {calcType === 'vp' && (
         <ValorPresente setResult={setResult} />
       )}
 
-      {/* Solo muestra el resultado si existe */}
       {result && <ResultBox result={result} />}
     </div>
-  );
+  </div>
+);
 }

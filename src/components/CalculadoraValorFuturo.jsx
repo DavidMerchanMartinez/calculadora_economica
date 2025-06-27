@@ -40,10 +40,9 @@ Donde:
   Tipo de capitalización: ${capitalizacion.toLowerCase()}
 
 Desarrollo:
-  VF = ${vp} * (1 + ${i.toFixed(5)})^${n}$
-  ${
+  VF = ${vp} * (1 + ${i.toFixed(5)})^${n}${
         capitalizacion === "Anticipada"
-          ? `* (1 + ${i.toFixed(5)})`
+          ? ` * (1 + ${i.toFixed(5)})`
           : ""
       }
 VF = ${resultadoFinal.toFixed(2)}`;
@@ -62,16 +61,22 @@ Donde:
   Tipo de capitalización: ${capitalizacion.toLowerCase()}
 
 Desarrollo:
-  VF = ${renta} * [((1 + ${i.toFixed(5)})^${n} - 1) / ${i.toFixed(5)}]$\n  ${
+  VF = ${renta} * [((1 + ${i.toFixed(5)})^${n} - 1) / ${i.toFixed(5)}]${
         capitalizacion === "Anticipada"
-          ? `* (1 + ${i.toFixed(5)})`
+          ? ` * (1 + ${i.toFixed(5)})`
           : ""
       }
 VF = ${resultadoFinal.toFixed(2)}`;
     }
 
+    const resultadoConPuntos = resultadoFinal
+      .toFixed(2)
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+      .replace(".", ",")
+      .replace(/,(\d{2})$/, (m) => "," + m.slice(1)); // para mantener 2 decimales después de la coma
+
     setResultado(
-      `Valor Futuro: $${resultadoFinal.toFixed(2)} (${n} períodos de tipo ${tipoPeriodo.toLowerCase()})`
+      `Valor Futuro: $${resultadoConPuntos} (${n} períodos de tipo ${tipoPeriodo.toLowerCase()})`
     );
     setProcedimiento(procedimientoTexto);
   };
