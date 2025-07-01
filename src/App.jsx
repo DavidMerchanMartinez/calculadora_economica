@@ -8,6 +8,7 @@ import RentaAnticipadaCalculator from './components/RentaAnticipadaCalculator';
 import RentaVencidaCalculator from './components/RentaVencidaCalculator';
 import CalculadoraValorFuturo from './components/CalculadoraValorFuturo';
 import ValorPresente from './components/ValorPresente';
+import AmortizationCalculator from './components/AmortizationCalculator';
 
 
 export default function App() {
@@ -50,6 +51,10 @@ export default function App() {
 
       {calcType === 'vp' && (
         <ValorPresente setResult={setResult} />
+      )}
+
+      {calcType === 'ac' && (
+        <AmortizationCalculator setResult={setResult} />
       )}
 
       {result && <ResultBox result={result} />}

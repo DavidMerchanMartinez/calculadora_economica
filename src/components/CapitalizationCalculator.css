@@ -1,0 +1,86 @@
+/* Contenedor general */
+.capital-container {
+  font-family: 'Segoe UI', sans-serif;
+  padding: 1rem;
+  background-color: #1b1b1b;
+  color: white;
+  min-height: 100vh;
+}
+
+/* Título */
+.capital-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Formulario */
+.capital-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 300px;
+  margin: 0 auto 30px auto;
+}
+
+.capital-form input,
+.capital-form select {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.capital-form button {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.capital-form button:hover {
+  background-color: #45a049;
+}
+
+/* Tabla responsive */
+.responsive-table {
+  overflow-x: auto;
+}
+
+/* Tabla */
+.capital-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1f1f1f;
+  color: white;
+  font-size: 0.9rem;
+  margin: auto;
+  max-width: 100%;
+}
+
+.capital-table thead {
+  background: linear-gradient(to right, #0f0f0f, #00bcd4);
+}
+
+.capital-table th, 
+.capital-table td {
+  padding: 12px 10px;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+.capital-table tbody tr:nth-child(even) {
+  background-color: #2a2a2a;
+}
+
+.capital-table tbody tr:nth-child(odd) {
+  background-color: #1f1f1f;
+}
+
+.capital-table tr:hover {
+  background-color: #333333;
+}

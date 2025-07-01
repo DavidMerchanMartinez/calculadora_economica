@@ -12,6 +12,7 @@ export default function CalculatorSelector({ calcType, setCalcType }) {
         <option value="renta_anticipada">Renta Anticipada</option>
         <option value="periods">Calcular Períodos</option>
         <option value="rate">Conversión de Tasa</option>
+        <option value="ac">Tabla amortizacion</option>
       </select>
     </>
   );
