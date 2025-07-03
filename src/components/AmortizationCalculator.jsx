@@ -40,31 +40,36 @@ const CapitalizationCalculator = () => {
   return (
     <div className="capital-container">
       <h2 className="capital-title">Calculadora de Capitalización</h2>
-      <div className="capital-form">
-        <input
-          type="number"
-          value={monto}
-          onChange={(e) => setMonto(+e.target.value)}
-          placeholder="Monto"
-        />
-        <input
-          type="number"
-          value={plazo}
-          onChange={(e) => setPlazo(+e.target.value)}
-          placeholder="Plazo"
-        />
-        <input
-          type="number"
-          value={tasa}
-          onChange={(e) => setTasa(+e.target.value)}
-          placeholder="Tasa de Interés"
-        />
-        <select value={periodo} onChange={(e) => setPeriodo(e.target.value)}>
-          <option value="Mensual">Mensual</option>
-          <option value="Trimestral">Trimestral</option>
-        </select>
-        <button onClick={calcular}>Calcular</button>
-      </div>
+     <div className="capital-form">
+  <label>Monto:</label>
+  <input
+    type="number"
+    value={monto}
+    onChange={(e) => setMonto(+e.target.value)}
+  />
+
+  <label>Plazo (número de períodos):</label>
+  <input
+    type="number"
+    value={plazo}
+    onChange={(e) => setPlazo(+e.target.value)}
+  />
+
+  <label>Tasa de interés (% anual):</label>
+  <input
+    type="number"
+    value={tasa}
+    onChange={(e) => setTasa(+e.target.value)}
+  />
+
+  <label>Periodo:</label>
+  <select value={periodo} onChange={(e) => setPeriodo(e.target.value)}>
+    <option value="Mensual">Mensual</option>
+    <option value="Trimestral">Trimestral</option>
+  </select>
+
+  <button onClick={calcular}>Calcular</button>
+</div>
 
       {/* ✅ Envolver la tabla para responsive */}
       {tabla.length > 0 && (
